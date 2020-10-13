@@ -10,6 +10,7 @@ namespace SchoolPractice
             Student Dante = new Student();
             Dante.NumberOfCredits = 1;
             Dante.Gpa = 4.0;
+            Dante.Name = "Dante";
 
             Teacher Kim = new Teacher();
             Course math = new Course();
@@ -18,7 +19,11 @@ namespace SchoolPractice
             math.CourseName = "Math 101";
             math.theTeacher(Kim.FirstName,Kim.LastName);
             string teacherName = math.getTeacherName();
-            Console.WriteLine(teacherName);
+            //Console.WriteLine(teacherName);
+
+            Dante.AddGrade(4, 3);
+            Console.WriteLine(Dante.ToString());
+            Console.WriteLine(math.ToString());
         }
     }
 }

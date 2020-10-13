@@ -19,5 +19,16 @@ namespace SchoolPractice
             return $"The teacher of this course is {this.teacherName}";
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is Course course &&
+                   CourseName == course.CourseName &&
+                   EqualityComparer<List<string>>.Default.Equals(students, course.students) &&
+                   teacherName == course.teacherName;
+        }
+        public override string ToString()
+        {
+            return teacherName + " teaches " + CourseName;
+        }
     }
 }
